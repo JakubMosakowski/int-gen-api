@@ -61,7 +61,3 @@ def get_words():
         first_word,
         second_word
     ]
-
-
-if __name__ == '__main__':
-    app.run()
