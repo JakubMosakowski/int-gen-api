@@ -1,5 +1,5 @@
 import random
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -48,7 +48,12 @@ def generate():
     generated_words = get_words()
     first = generated_words[0]
     second = generated_words[1]
-    return f"{first} i {second}"
+
+    return jsonify({
+        "firstWord": first,
+        "secondWord": second,
+        "separator": "i"
+    })
 
 
 def get_words():
